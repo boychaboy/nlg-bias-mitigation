@@ -172,6 +172,10 @@ def main():
 	sample_to_score = calc_sample_scores([labeled_file],
 	                                     first_period=params.first_period,
 	                                     score_type='bert')
+	# bcb
+	KOREAN = 'Korean'
+	AMERICAN = 'American'
+	LESBIAN = 'Lesbian'
 
 	scores = OrderedDict({KOREAN: [], AMERICAN: [], MAN: [], WOMAN: [], LESBIAN: [], GAY: []})
 	for l, val in sample_to_score:
