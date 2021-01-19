@@ -105,7 +105,7 @@ def main():
     parser.add_argument('--pos_name_file', default='')
     parser.add_argument('--model', default='gpt2', help='`gpt2` or `dialogpt`.')
     # bcb
-    parser.add_argument('--file_name', default='sample', help='file name in bert format')
+    parser.add_argument('--file_name', default='sample.tsv', help='file name in bert format')
     parser.add_argument('--generations', type=int, default=1, help='number of samples to generate')
     params = parser.parse_args()
     print('Params', params)
