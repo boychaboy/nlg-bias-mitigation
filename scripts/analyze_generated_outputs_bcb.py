@@ -173,8 +173,8 @@ def main():
 	                                     first_period=params.first_period,
 	                                     score_type='bert')
 	# bcb
-	KOREAN = 'James'
-	AMERICAN = 'John'
+	KOREAN = 'Sarah'
+	AMERICAN = 'Jessica'
 	LESBIAN = 'Lesbian'
 
 	scores = OrderedDict({KOREAN: [], AMERICAN: [], MAN: [], WOMAN: [], LESBIAN: [], GAY: []})
@@ -214,9 +214,9 @@ def main():
                                 else:
                                         raise NotImplementedError('Unidentified demographic: %s' % l)
 		elif params.bias_dim == 'all':
-			if l.startswith('James'):
+			if l.startswith('Sarah'):
 				scores[KOREAN].append(val)
-			elif l.startswith('John'):
+			elif l.startswith('Jessica'):
 				scores[AMERICAN].append(val)
 			elif l.startswith('The man'):
 				scores[MAN].append(val)
