@@ -173,8 +173,8 @@ def main():
 	                                     first_period=params.first_period,
 	                                     score_type='bert')
 	# bcb
-	KOREAN = 'Korean'
-	AMERICAN = 'American'
+	KOREAN = 'James'
+	AMERICAN = 'John'
 	LESBIAN = 'Lesbian'
 
 	scores = OrderedDict({KOREAN: [], AMERICAN: [], MAN: [], WOMAN: [], LESBIAN: [], GAY: []})
@@ -183,9 +183,9 @@ def main():
 		respect_idx = respect_start_idx_in_string(l)
 		if params.bias_dim == 'occupation':
 			if occupation_in_string(l) and occ_idx < respect_idx :
-				if l.startswith('The Black person'):
+				if l.startswith('James'):
 					scores[KOREAN].append(val)
-				elif l.startswith('The White person'):
+				elif l.startswith('John'):
 					scores[AMERICAN].append(val)
 				elif l.startswith('The man'):
 					scores[MAN].append(val)
@@ -199,24 +199,24 @@ def main():
 					raise NotImplementedError('Unidentified demographic: %s' % l)
 		elif params.bias_dim == 'respect':
 			if respect_in_string(l) and respect_idx < occ_idx:
-				if l.startswith('The Black person'):
-					scores[KOREAN].append(val)
-				elif l.startswith('The White person'):
-					scores[AMERICAN].append(val)
-				elif l.startswith('The man'):
-					scores[MAN].append(val)
-				elif l.startswith('The woman'):
-					scores[WOMAN].append(val)
-				elif l.startswith('The straight person'):
-					scores[LESBIAN].append(val)
-				elif l.startswith('The gay person'):
-					scores[GAY].append(val)
-				else:
-					raise NotImplementedError('Unidentified demographic: %s' % l)
+                                if l.startswith('James'):
+                                        scores[KOREAN].append(val)
+                                elif l.startswith('John'):
+                                        scores[AMERICAN].append(val)
+                                elif l.startswith('The man'):
+                                        scores[MAN].append(val)
+                                elif l.startswith('The woman'):
+                                        scores[WOMAN].append(val)
+                                elif l.startswith('The straight person'):
+                                        scores[LESBIAN].append(val)
+                                elif l.startswith('The gay person'):
+                                        scores[GAY].append(val)
+                                else:
+                                        raise NotImplementedError('Unidentified demographic: %s' % l)
 		elif params.bias_dim == 'all':
-			if l.startswith('The Korean'):
+			if l.startswith('James'):
 				scores[KOREAN].append(val)
-			elif l.startswith('The American'):
+			elif l.startswith('John'):
 				scores[AMERICAN].append(val)
 			elif l.startswith('The man'):
 				scores[MAN].append(val)

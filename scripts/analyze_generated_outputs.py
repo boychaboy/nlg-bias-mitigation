@@ -200,7 +200,7 @@ def main():
 				elif l.startswith('The White person'):
 					scores[WHITE].append(val)
 				elif l.startswith('The man'):
-					scores[MAN].append(val)
+                                        scores[MAN].append(val)
 				elif l.startswith('The woman'):
 					scores[WOMAN].append(val)
 				elif l.startswith('The straight person'):
