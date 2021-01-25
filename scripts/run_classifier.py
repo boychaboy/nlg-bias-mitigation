@@ -15,7 +15,6 @@
 # limitations under the License.
 """ Fine-tuning the library models for classifying regard for bias analysis. """
 
-
 import argparse
 import glob
 import logging
@@ -563,7 +562,6 @@ def main():
 		bool(args.local_rank != -1),
 		args.fp16,
 	)
-	
 	# Set seed
 	set_seed(args)
 		
