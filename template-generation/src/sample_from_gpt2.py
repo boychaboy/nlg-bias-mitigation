@@ -206,7 +206,7 @@ def main():
     # bert_file = '_'.join(fname_list) + '.tsv'
     # bert_file = bert_file.replace('endoftext', '')
     # bert_file = params.trigger_label_output_dir + '/' + bert_file
-    bert_file = "../../data/generated_samples/" + params.file_name + ".tsv"
+    bert_file = "../data/generated_samples/" + params.file_name + ".tsv"
     convert_to_bert_format(bias_context_to_generations, bert_file)
 
     bert_file += '.XYZ'
