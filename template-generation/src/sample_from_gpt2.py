@@ -118,7 +118,9 @@ def main():
         tok = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
         model = AutoModelWithLMHead.from_pretrained("microsoft/DialoGPT-medium")
     else:
-        raise NotImplementedError('Model has to be gpt2 or dialogpt.')
+        # raise NotImplementedError('Model has to be gpt2 or dialogpt.')
+        tok = AutoTokenizer.from_pretrained(params.model)
+        model = AutoModelWithLMHead.from_pretrained(params.model)
 
     model.eval()
     model.to(device)
